@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root{
+  --color-blue: rgb(67, 159, 246);
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0px;
+}
+
+p{
+  margin: 0;
+}
+
+li img{
+  height: 24px;
+  width: 24px;
+}
+
+.layout{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 4fr;
+  grid-template-rows: max(100px, 15%) 85%;
+}
+
+/*Sidebar setting*/
+
+.sidebar{
+  background-color: var(--color-blue);
+  grid-area: 1 / 1 / span 2 / span 1;
+
+  display: grid;
+  grid-template-rows:[Title] 1fr [Navigation] 4fr [Branding-start] 5fr [Branding-end];
+}
+
+.sidebar .title{
+  width: 100%;
+  grid-row: Title / Navigation;
+  display: flex;
+  align-items: center;
+}
+
+.title > img{
+  height: 56px;
+  width: 56px;
+}
+
+.title > p{
+  font-size: 1.4em;
+  color: white;
+}
+
+.navigation ul, .branding ul{
+  list-style: none;
+  padding-left: 20px;
+  display: grid;
+}
+
+.sidebar .navigation{
+  grid-row: Navigation / Branding-start;
+}
+
+.navigation ul{
+  grid-template-rows: repeat(6, minmax(40px, 1fr));
+}
+
+.sidebar .branding{
+  grid-row: Branding;
+}
+
+.branding ul{
+  grid-template-rows: repeat(3, minmax(40px, 1fr));
+}
+
+li{
+  display: flex;
+
+}
+
+/*Header setting*/
+
+.header{
+  grid-area: 1 / 2 / span 1 / span 1;
+  box-shadow: 0 5px 5px rgb(133, 132, 132);
+  order: 1;
+
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+
+.header-toprow{
+  grid-row: 1 / 2;
+  
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+}
+
+.header-bottomrow{
+  display: grid;
+}
+
+.searchbar{
+  grid-column: span 1;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 7fr 1fr 1fr 2fr;
+}
+
+.main-content{
+  grid-area: span 1 / span 1;
+  background-color: rgb(180, 203, 218);
+  order: 0;
+}

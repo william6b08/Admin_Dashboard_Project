@@ -10,6 +10,7 @@
 
 body{
   margin: 0px;
+  height: 1088px;
 }
 
 p{
@@ -23,7 +24,7 @@ li img{
 
 .layout{
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-columns: minmax(200px, 1fr) minmax(400px, 4fr);
   grid-template-rows: max(100px, 15%) 85%;
@@ -32,6 +33,9 @@ li img{
 /*Sidebar setting*/
 
 .sidebar{
+  height: 100vh;
+  position: sticky;
+  top: 0px;
   background-color: var(--color-blue);
   grid-area: 1 / 1 / span 2 / span 1;
 
@@ -86,8 +90,11 @@ li{
 /*Header setting*/
 
 .header{
+  position: sticky;
+  top: -5rem;
   padding-right: 5px;
   grid-area: 1 / 2 / span 1 / span 1;
+  background-color: white;
   box-shadow: 0 5px 5px rgb(133, 132, 132);
   order: 1;
 
@@ -178,6 +185,7 @@ button{
 button:hover{
   color: white;
 }
+/*Main content layout*/
 
 .main-content{
   grid-area: span 1 / span 1;
@@ -189,17 +197,16 @@ button:hover{
   grid-template-rows: 5% 95%;
 }
 
-h2.project-title, h2.announcements-title{
-  font-size: 1.3rem;
+.main-content > h2{
   margin: 0;
   text-align: center;
 }
 
-h2.project-title{
+.project-title{
   grid-area: span 1 / span 1;
 }
 
-h2.announcements-title{
+.announcements-title{
   grid-area: 1 / 2 / span 1 / span 1;
 }
 
@@ -209,23 +216,23 @@ h2.announcements-title{
   grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
   grid-auto-rows: 200px;
   justify-content: space-around;
+}
 
+.projects-outlook{
+  grid-area: 2 / 1 / span 1 / span 1;
+}
+
+.announcements{
+  grid-area: 2 / 2 / span 1 / span 1;
 }
 
 .projects-outlook > div, .announcements > div{
   height: 90%;
   width: 90%;
   background-color: white;
+  border-left: 15px solid rgb(255, 214, 91);
   border-radius: 1rem;
   padding: 5px 5px 0 15px;
   place-self: center;
   overflow: scroll;
-}
-
-.projects-outlook > div{
-  border-left: 15px solid rgb(255, 214, 91);
-}
-
-.announcements > div{
-  border-left: 15px solid var(--color-blue);
 }

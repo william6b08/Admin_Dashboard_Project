@@ -54,7 +54,7 @@
       <div class="header-toprow">
 
         <div class="searchbar">
-          <img src="Icons/search-icon.png" alt="search-icon">
+          <label for="user-input"><img src="Icons/search-icon.png" alt="search-icon"></label>
           <input type="text" name="user-input" id="user-input">
         </div>
 
@@ -65,8 +65,15 @@
         </div>
       </div>
       <div class="header-bottomrow">
-        <div class="user-greeting"></div>
-        <div class="action-button"></div>
+        <div class="user-greeting">
+          <img src="./Icons/user-icon.png" alt="user-icon-large" style="width: 48px; height: 48px;">
+          <p>Hi there,<br>User Name</p>
+        </div>
+        <ul class="commands">
+          <li><button type="button">New</button></li>
+          <li><button type="button">Upload</button></li>
+          <li><button type="button">Share</button></li>
+        </ul>
       </div>
     </div>
     <div class="main-content"></div>

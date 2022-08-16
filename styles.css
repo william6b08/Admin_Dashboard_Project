@@ -25,7 +25,7 @@ li img{
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: minmax(200px, 1fr) 4fr;
+  grid-template-columns: minmax(200px, 1fr) minmax(400px, 4fr);
   grid-template-rows: max(100px, 15%) 85%;
 }
 
@@ -101,16 +101,75 @@ li{
   grid-template-columns: 7fr 3fr;
 }
 
-.header-bottomrow{
-  display: grid;
+.searchbar, .user-info{
+  display: flex;
 }
 
 .searchbar{
-  grid-column: span 1;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 7fr 1fr 1fr 2fr;
+.searchbar img{
+  margin: 0 10px;
+}
+
+.searchbar input{
+  flex: 1 1 50%;
+  background-color: rgb(235, 235, 235);
+  border: none;
+  border-radius: 1rem;
+  padding-left: 0.5rem;
+}
+
+.searchbar input:hover, .searchbar label:hover{
+  cursor: pointer;
+}
+
+.user-info{
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user-info img{
+  margin-left: auto;
+}
+
+.user-info p{
+  white-space: nowrap;
+}
+
+.header-bottomrow{
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-greeting{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.user-greeting > *{
+  margin: 0 10px;
+}
+
+ul.commands{
+  margin: 0 0 5px 0;
+  padding-left: 0;
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+button{
+  background-color: var(--color-blue);
+  width: 5rem;
+  height: 2rem;
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
 }
 
 .main-content{

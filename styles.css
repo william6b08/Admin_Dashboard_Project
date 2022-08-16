@@ -86,6 +86,7 @@ li{
 /*Header setting*/
 
 .header{
+  padding-right: 5px;
   grid-area: 1 / 2 / span 1 / span 1;
   box-shadow: 0 5px 5px rgb(133, 132, 132);
   order: 1;
@@ -152,6 +153,8 @@ li{
 
 .user-greeting > *{
   margin: 0 10px;
+  font-size: 1.3rem;
+  line-height: 1.4rem;
 }
 
 ul.commands{
@@ -172,8 +175,57 @@ button{
   text-align: center;
 }
 
+button:hover{
+  color: white;
+}
+
 .main-content{
   grid-area: span 1 / span 1;
   background-color: rgb(180, 203, 218);
   order: 0;
+
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  grid-template-rows: 5% 95%;
+}
+
+h2.project-title, h2.announcements-title{
+  font-size: 1.3rem;
+  margin: 0;
+  text-align: center;
+}
+
+h2.project-title{
+  grid-area: span 1 / span 1;
+}
+
+h2.announcements-title{
+  grid-area: 1 / 2 / span 1 / span 1;
+}
+
+.projects-outlook, .announcements{
+  display: grid;
+  overflow: scroll;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-auto-rows: 200px;
+  justify-content: space-around;
+
+}
+
+.projects-outlook > div, .announcements > div{
+  height: 90%;
+  width: 90%;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 5px 5px 0 15px;
+  place-self: center;
+  overflow: scroll;
+}
+
+.projects-outlook > div{
+  border-left: 15px solid rgb(255, 214, 91);
+}
+
+.announcements > div{
+  border-left: 15px solid var(--color-blue);
 }

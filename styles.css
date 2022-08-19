@@ -144,7 +144,11 @@ img:hover{
 
 .user-info{
   justify-content: space-around;
-  align-items: center;
+  align-items: stretch;
+}
+
+p.name{
+  margin: auto 0;
 }
 
 .user-info img{

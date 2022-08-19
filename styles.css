@@ -84,7 +84,15 @@ li img{
 
 li{
   display: flex;
+}
 
+li:hover{
+  cursor: pointer;
+  color: white;
+}
+
+img:hover{
+  color: white;
 }
 
 /*Header setting*/
@@ -180,10 +188,17 @@ button{
   border: none;
   border-radius: 1rem;
   text-align: center;
+  box-shadow: 0 2px 5px rgb(183, 190, 194);
+  transition: box-shadow 0.1s;
 }
 
 button:hover{
   color: white;
+  cursor: pointer;
+}
+
+button:active{
+  box-shadow: none;
 }
 /*Main content layout*/
 
@@ -195,10 +210,14 @@ button:hover{
   display: grid;
   grid-template-columns: 5fr 2fr;
   grid-template-rows: 5% 95%;
+  overflow: auto;
+}
+
+h2{
+  margin: 0;
 }
 
 .main-content > h2{
-  margin: 0;
   text-align: center;
 }
 
@@ -212,10 +231,33 @@ button:hover{
 
 .projects-outlook, .announcements{
   display: grid;
-  overflow: scroll;
   grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
   grid-auto-rows: 200px;
   justify-content: space-around;
+}
+
+.task{
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content{
+  overflow: auto;
+}
+
+.icon-lists{
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, 1.5rem);
+  column-gap: 5px;
+  justify-content: end;
+}
+
+img.svg{
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .projects-outlook{
@@ -230,9 +272,16 @@ button:hover{
   height: 90%;
   width: 90%;
   background-color: white;
-  border-left: 15px solid rgb(255, 214, 91);
-  border-radius: 1rem;
+  border-radius: 0 1rem 1rem 0;
   padding: 5px 5px 0 15px;
   place-self: center;
   overflow: scroll;
+}
+
+.projects-outlook > div{
+  border-left: 15px solid rgb(255, 214, 91);
+}
+
+.announcements > div{
+  border-left: 15px solid var(--color-blue);
 }
